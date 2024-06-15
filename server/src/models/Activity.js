@@ -7,14 +7,15 @@ module.exports = (dataBase) => {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
-      allowNull: false
+      allowNull: false,
+      
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     difficulty: {
-      type: DataTypes.RANGE(DataTypes.INTEGER),
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     duration:{

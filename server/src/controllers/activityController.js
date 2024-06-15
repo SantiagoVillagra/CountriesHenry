@@ -13,9 +13,16 @@ const getActivityControl = async () => {
 };
 
 const postActivitiesControl = async (info) => {
-    
-    console.log(info)
-    return({response: "postear actividades"})
+    const { name, difficulty, duration, season, id } = info
+    const newActivity = await Activity.create({ name, difficulty, duration, season })
+
+
+    const mapeoId = id.map( async(id) => {
+        await newActivity.setCountries(id)
+    })
+   
+    return(newActivity)
+
 }
 
 module.exports = {
@@ -27,15 +34,11 @@ module.exports = {
 /*
 
 
-// Controlador para obtener todas las actividades
-const getActivityControl = async () => {
-    const activities = await Activity.findAll();
-    return activities;
-};
+// 
 
 // Controlador para crear una nueva actividad
 const postActivitiesControl = async (activityData) => {
-    const { name, difficulty, duration, season, countryIds } = activityData;
+    const { name, difficulty, duration, season, id, } = activityData;
 
     // Creación de la nueva actividad
     const newActivity = await Activity.create({ name, difficulty, duration, season });
