@@ -1,0 +1,88 @@
+
+.fondo {
+    background-image: url('../../assets/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para el botón con imagen de fondo */
+.imageButton {
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color: transparent; /* Cambia background-color: none a background-color: transparent */
+    border: none; /* Elimina cualquier borde del botón si no es necesario */
+    padding: 0; /* Ajusta el relleno según sea necesario */
+    overflow: hidden; /* Asegura que el botón no muestre contenido fuera de sus límites */
+}
+
+/* Ajustes al tamaño del botón y la imagen */
+.imageButton img {
+    width: 100%; /* Asegura que la imagen ocupe todo el espacio del botón */
+    height: auto; /* Mantén la proporción de la imagen */
+}
+
+/* Efecto de hover para el botón */
+.imageButton:hover {
+    transform: scale(1.05); /* Ligeramente agranda la imagen al pasar el mouse */
+}
+
+/* Restablecer estilos del body y html para asegurar márgenes cero */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+/*.fondo {
+    background-image: url('../../assets/fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+
+}
+
+
+.imageButton {
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color: none;
+}
+
+.imageButton:hover {
+    transform: scale(1.05); 
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    margin: 0;
+    padding: 0;
+}
+
+ 
+# selecciono por id 
+. selecciono por clase 
+p por elemento 
+
+
+
+*/

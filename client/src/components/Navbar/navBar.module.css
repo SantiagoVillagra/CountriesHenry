@@ -1,0 +1,32 @@
+.Navbar {
+    background-color: #5898bb;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+
+
+}
+
+.Navbar a {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+    font-family:fantasy;
+    font-size: 20px;
+}
+
+
+.paleta_de_colores {
+    color: #ACE3BE;
+    color: #8AE2E3;
+    color: #62E0B7,
+ 
+
+}
+
+.paleta_de_colores2{
+    color: #C1E3C1;
+    color: #B6D4E3,
+   
+}

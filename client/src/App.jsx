@@ -1,7 +1,10 @@
 import { Route, Routes } from 'react-router-dom'
 import Home from './components/Home/Home'
 import LandingPage from './components/Landing/Landing'
-
+import Detail from './components/Detail/Detail'
+import NavBar from "./components/NavBar/NavBar"
+import About from './components/About/About'
+import Create from './components/Create/Create'
 
 function App() {
   
@@ -13,19 +16,33 @@ function App() {
           <Route path='/' element={<LandingPage />}/>
           <Route path='/home/*' element={
             <>
-             <Navbar />
+             <NavBar />
               <Home />
             </>
           }
           />
-        <Route path='/home/:id' element={
+        <Route path='/detail/:id' element={
             <>
-             <Navbar />
-              <Home />
+             <NavBar />
+              <Detail />
             </>
           }
           />
-
+          <Route path='/about' element={
+            <>
+             <NavBar />
+              <About />
+            </>
+          }
+          />
+           <Route path='/create' element={
+            <>
+             <NavBar />
+              <Create />
+            </>
+          }
+          />
+       
         </Routes>
 
     
@@ -35,3 +52,4 @@ function App() {
 }
 
 export default App
+
