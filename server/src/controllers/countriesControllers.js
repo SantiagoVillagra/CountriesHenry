@@ -36,7 +36,13 @@ if(countries.length === 0 ){
 } 
 
 return(
-    await Country.findAll()
+    await Country.findAll({
+      include: {
+          model: Activity,
+          arttributes: ["name", "dificulty", "duration", "season"],
+          through: {attributes: []}
+      }
+  })
 )
 
 };

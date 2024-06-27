@@ -26,3 +26,4 @@ module.exports = {
 };
 
 
+//SET client_encoding TO 'utf8';
