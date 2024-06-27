@@ -5,6 +5,8 @@ import Detail from './components/Detail/Detail'
 import NavBar from "./components/NavBar/NavBar"
 import About from './components/About/About'
 import Create from './components/Create/Create'
+import SearchBar from '../src/components/SearchBar/SearchBar'
+
 
 function App() {
   
@@ -39,6 +41,12 @@ function App() {
             <>
              <NavBar />
               <Create />
+            </>
+          }
+          />
+          <Route path='/search' element={
+            <>
+             <NavBar />
             </>
           }
           />

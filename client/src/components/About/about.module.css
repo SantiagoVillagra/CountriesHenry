@@ -1,0 +1,34 @@
+.cardAbout {
+    width: 500px; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center;
+    margin: 20px auto; 
+    display: flex;
+    align-items: center;
+    background-color: #B6D4E3;
+}
+
+
+
+.img {
+     
+    width: 300px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    height: 300px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    border-radius: 60%; /* Hace que la imagen sea redonda */
+    margin-right: 25px; /* Espacio entre la imagen y el texto */
+}
+
+
+.cardAbout p {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+  
+    line-height: 1.6;
+    font-family:fantasy;
+    font-size: 20px;
+    margin-bottom: 10px; /* Espacio entre párrafo */
+}
