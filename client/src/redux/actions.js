@@ -28,7 +28,7 @@ export const countriesActivity = () =>{
 export const orderAndFilter = (filterBy, filter, orderBy, order) =>{
     return {
         type: ORDER_AND_FILTER,
-        payload: filterBy, filter, orderBy, order
+        payload: {filterBy, filter, orderBy, order}
     }
 }
 

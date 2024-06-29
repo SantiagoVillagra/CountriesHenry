@@ -1,6 +1,30 @@
+.homeBackground {
+    background-color: #cdf4f6;
+    width: 100%;
+    cursor: auto;
+  }
+  
+
 .Cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 10px;
+}
+
+
+.Cards p {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+    font-family:fantasy;
+    font-size: 20px;
+    margin-bottom: 10px; /* Espacio entre párrafos */
+}
+
+.Cards img {
+    
+        width: 250px;
+        border-radius: 10px; 
+   
 }
