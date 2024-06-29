@@ -14,12 +14,15 @@ const getActivityControl = async () => {
 
 const postActivitiesControl = async (info) => {
     const { name, difficulty, duration, season, id } = info
-    const newActivity = await Activity.create({ name, difficulty, duration, season })
+    console.log(id)
+    const newActivity = await Activity.create({ name, difficulty, duration, season})
 
 
-    const mapeoId = id.map( async(id) => {
-        await newActivity.setCountries(id)
-    })
+    // const mapeoId = id.map( async(id) => {
+    //     await newActivity.setCountries(id)
+    // })
+
+    newActivity.addCountries(id)
    
     return(newActivity)
 
