@@ -48,14 +48,14 @@ return(
 };
 
 const getCountriesByNameControl = async (name) =>{
-
-  const countryRequire = await Country.findAll({
+ 
+    const countryRequire = await Country.findAll({
     where:{
       name: {[Op.like]: `%${name.toLowerCase()}%`
     }
   }
   })
-  return countryRequire
+  return (countryRequire)
  
 }
 
