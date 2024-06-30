@@ -2,8 +2,9 @@ import Card from "../Card/card"
 import SearchBar from "../SearchBar/SearchBar"
 import { useEffect, useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { orderAndFilter, getCountries } from "../../redux/actions"
+import { orderAndFilter, getCountries, getActivity,  } from "../../redux/actions"
 import style from "../Home/home.module.css"
+import { useFetcher } from "react-router-dom"
 
 
 export default function Home(){
@@ -26,6 +27,9 @@ export default function Home(){
   const countriesAct = useSelector((state) => state.countriesAct);
   const orderedAndFiltered  = useSelector((state) => state.orderAndFilter);
 
+
+
+
   const selectFilter = (event) => {
     setFilter({ ...filterApply, filterBy: event.target.value });
   };
@@ -41,6 +45,7 @@ export default function Home(){
 
   useEffect(() => {
     dispatch(getCountries());
+    dispatch(getActivity())
   }, [dispatch]);
 
   const countriesXPage = 10;
@@ -48,9 +53,14 @@ export default function Home(){
   const [currentPage, setCurrentPage] = useState(0);
 
   useEffect(() => {
-    setCardPage([...allCountries].splice(0, countriesXPage));
-    
-  }, [allCountries]);
+    if(orderedAndFiltered.length>0){
+      setCardPage([...orderedAndFiltered].splice(0, countriesXPage))
+    }
+    else{setCardPage([...allCountries].splice(0, countriesXPage));
+    }
+  }, [orderedAndFiltered,allCountries]);
+
+ 
 
   const prevHandler = () => {
     const prevPage = currentPage - 1;
@@ -165,7 +175,7 @@ export default function Home(){
       </div>
 
       <div>
-        <div>
+        <div className={style.pagButton}>
           <button onClick={prevHandler}>{"<<"}</button>
           <p>{currentPage + 1}</p>
           <button onClick={nextHandler}>{">>"}</button>

@@ -8,7 +8,7 @@ export default function Search(){
     
  
     return(
-        <div  className={style.card}>
+        <div  className={style.cardInd}>
             {
                 country && country.map(({id,name,image,continent}) =>{
                     return(
@@ -17,7 +17,7 @@ export default function Search(){
                         id={id}
                         name={name}
                         image={image}
-                        continen={continent}
+                        continent={continent}
                         
                         />
                             

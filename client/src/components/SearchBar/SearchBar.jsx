@@ -15,18 +15,17 @@ export default function SearchBar(){
         setSearch(event.target.value)
     }
 
-    const handleSearch = (search) =>{
-        navigate("/search")
+    const handleSearch = (event) =>{
+        event.preventDefault()
         dispatch(searchCountries(search))
-      
-        console.log("atento aca",searchCountries(search))
+        navigate("/search")
     }
 
 
     return(
         <div className={style.containerSearch}>
             <input type="search" value={search} placeholder="Busca tu pais" onChange={handleChange} className={style.inputSearch} />
-            <button onClick={handleSearch} className={style.botonSearch}>Busqueda</button>
+            <button onClick={handleSearch} disabled={!search.trim()} className={style.botonSearch}>Busqueda</button>
         </div>
     )
 }

@@ -17,7 +17,8 @@ useEffect(() => {
 
     return(
         <>
-        <div className={styles.card}>
+        <div className={styles.cardInd}>
+        <img src={country.image} alt={country.name} className={styles.img}/>
             <p>ID: {country.id}</p>
             <p>Name: {country.name}</p>
             <p>Continents: {country.continent}</p>
@@ -25,7 +26,7 @@ useEffect(() => {
             <p>Subregion: {country.subregion}</p>
             <p>Area: {country.area} m2</p>
             <p>Population: {country.population}</p>
-            <img src={country.image} alt={country.name} className={styles.img}/>
+            
         </div>
         </>
     )

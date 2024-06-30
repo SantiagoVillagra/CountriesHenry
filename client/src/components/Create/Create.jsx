@@ -197,19 +197,16 @@ export default function Form() {
                 </div>
 
                 <div>
-                    <label htmlFor="country">Selecciona un country: </label>
-                    <select name="country" id="country" value={form.country} onChange={handleChange}>
-                        <option value="Selecciona un country--">Selecciona un country--</option>
-                        {countriesOrdenados?.map((country, index) => {
-                            return (
-                                <option value={`${country.id}`}>{`${country.name}`}</option>
-                            )
-                        })
-                        }
-                    </select>
-                    <br />
-                    <span>{errors.country}</span>
-                </div>
+    <label htmlFor="country">Selecciona un país: </label>
+    <select name="country" id="country" value={form.country} onChange={handleChange}>
+        <option value="Selecciona un país--">Selecciona un país--</option>
+        {countriesOrdenados?.map((country, index) => (
+            <option key={country.id} value={country.id}>{country.name}</option>
+        ))}
+    </select>
+    <br />
+    <span>{errors.country}</span>
+</div>
 
                 <div>
                     {selectCountries?.map((select, index) => {

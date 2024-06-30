@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, SEARCH_COUNTRIES, COUNTRIES_ACTIVITY, ORDER_AND_FILTER } from '../redux/actionTypes'
+import { GET_COUNTRIES, SEARCH_COUNTRIES, GET_ACTIVITY, ORDER_AND_FILTER } from '../redux/actionTypes'
 
 const initialState = {
     allCountries: [],
@@ -13,11 +13,10 @@ const rootReducer = (state = initialState, { type, payload }) => {
         return {...state, allCountries: payload}
     
     case SEARCH_COUNTRIES:
-        console.log("se recibio la action", payload)
-        console.log(payload)
+      
         return{...state, searchCountry: payload}
 
-    case COUNTRIES_ACTIVITY:
+    case GET_ACTIVITY:
         return{...state, countriesAct: payload}
 
     case ORDER_AND_FILTER:
@@ -29,31 +28,38 @@ const rootReducer = (state = initialState, { type, payload }) => {
         if (filterBy !== "" && filterBy !== "Filtrar por") {
           if (filterBy === "Continente") {
             filteredCountries = copyState.filter(
-              (country) => country.continents === filter
+              (country) => country.continent === filter
             );
           }
           if (filterBy === "Tipo") {
+            console.log("entre al tipo")
+            
+
             filteredCountries = copyState.filter((country) => {
-              const { Activities } = country;
-              return Activities.some((activity) => activity.name === filter);
+              const { Activities } = country; 
+             return Activities.some((activity) => activity.name === filter);
               // aca el some me devuelve true o false segun tenga actividad igual al filtro o no
               // y agrega el country a filteredCountries para devolverlo. 
+              
             });
           }
-        }
-        if(orderBy === "Asc" || orderBy === "Desc"){
+
+        
+    }
+        if(order === "Asc" || order === "Desc"){
             
             let ordered = []
             let copyState2 = []
             if (filteredCountries.length) {
-                copyState2 = filteredCountries;
+                copyState2 = [...filteredCountries];
             } else {
                 copyState2 = [...state.allCountries];
             }
+            console.log(copyState2)
             // el metodo sort compara caso asc o desc, y el metodo localCompare compara dos strings alfabeticamente
             if (orderBy === "Alfabetico") {
                 ordered = copyState2.sort((a, b) => {
-                    if (order === "Asc") {
+                    if (order === "Desc") {
                         return a.name.localeCompare(b.name);
                     } else {
                         return b.name.localeCompare(a.name);
@@ -63,7 +69,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
 
             if (orderBy === "Poblacion") {
                 ordered = copyState2.sort((a, b) => {
-                    if (order === "Asc") {
+                    if (order === "Desc") {
                         return a.population - b.population;
                     } else {
                         return b.population - a.population;
@@ -77,12 +83,14 @@ const rootReducer = (state = initialState, { type, payload }) => {
         }
         return{...state, orderAndFilter: []} // si no hay filttro ni orden 
 
-    default:
+        default:
         return {...state}
+    }
+    
  }
 
 
-}
+
 
 
 export default rootReducer;

@@ -1,4 +1,4 @@
-.card {
+.cardInd {
     width: 300px; 
     padding: 20px; 
     border: 1px solid #ccc; 
@@ -10,12 +10,12 @@
 
 
 
-.img {
+.cardInd img {
     width: 250px;
     border-radius: 10px; 
 }
 
-.card p {
+.cardInd p {
     text-decoration: none;
     color: black;
     margin: 0 10px;

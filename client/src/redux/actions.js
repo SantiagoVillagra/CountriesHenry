@@ -1,4 +1,4 @@
-import { GET_COUNTRIES, SEARCH_COUNTRIES, COUNTRIES_ACTIVITY, ORDER_AND_FILTER } from '../redux/actionTypes'
+import { GET_COUNTRIES, SEARCH_COUNTRIES, GET_ACTIVITY, ORDER_AND_FILTER } from '../redux/actionTypes'
 
 import axios from "axios"
 
@@ -15,15 +15,14 @@ export const searchCountries = (name) =>{
     return function(dispatch){
         axios.get(`http://localhost:3001/countries?name=${name}`)
         .then(({data}) => dispatch({type:SEARCH_COUNTRIES, payload: data}))
-        console.log("esto recibe el:",name)
-    }
+           }
 }
 
 
-export const countriesActivity = () =>{
+export const getActivity = () =>{
     return function (dispatch){
         axios.get("http://localhost:3001/activities")
-        .then(({data}) => dispatch({type: COUNTRIES_ACTIVITY, payload: data}))
+        .then(({data}) => dispatch({type: GET_ACTIVITY, payload: data}))
     }
 }
 

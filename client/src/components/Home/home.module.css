@@ -1,30 +1,84 @@
-.homeBackground {
+.body {
     background-color: #cdf4f6;
     width: 100%;
     cursor: auto;
-  }
-  
+    height: 100vh; 
+    margin: 0;
+}
+
+.searchBar{
+  display: flex;
+  justify-content: flex-end; /* Alinea los elementos al final del contenedor flex */
+  align-items: center; /* Centra verticalmente los elementos */
+  padding: 10px; /* Espacio alrededor del contenido */
+  background-color: #f0f0f0; /* Color de fondo opcional */
+}
 
 .Cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     padding: 10px;
-}
-
-
-.Cards p {
-    text-decoration: none;
-    color: black;
+     color: black;
     margin: 0 10px;
     font-family:fantasy;
     font-size: 20px;
     margin-bottom: 10px; /* Espacio entre párrafos */
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center;
 }
 
 .Cards img {
-    
-        width: 250px;
-        border-radius: 10px; 
-   
+  width:280px; /* Ancho deseado para todas las imágenes */
+  height: 200px; /* Altura deseada para todas las imágenes */
+  object-fit: cover; /* Ajusta la imagen para cubrir el contenedor manteniendo la relación de aspecto */
+  border-radius: 10px;
 }
+
+ /* Estilos para el paginados */
+
+.pagButton {
+    padding: 10px 15px;
+    margin: 0 5px;
+    background-color: #5d9bbe;
+    color: rgb(20, 19, 19);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .pagButton:hover {
+    background-color: #c7ccce;
+  }
+  
+  .pagButton:active {
+    background-color: #c7ccce;
+  }
+  
+ 
+  .pagNum {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 5px;
+    background-color: none;
+    color: #000000;
+    font-size: medium;
+   
+    font-family: fantasy;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+ 
+
+  .container {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente (opcional) */
+    margin-top: 20px; /* Ajusta el margen según sea necesario */
+  }
+
+ 
