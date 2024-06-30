@@ -13,6 +13,8 @@ const rootReducer = (state = initialState, { type, payload }) => {
         return {...state, allCountries: payload}
     
     case SEARCH_COUNTRIES:
+        console.log("se recibio la action", payload)
+        console.log(payload)
         return{...state, searchCountry: payload}
 
     case COUNTRIES_ACTIVITY:

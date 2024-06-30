@@ -95,7 +95,7 @@ export default function Home(){
     );
     setFilter(filterDefault);
     setOrder(orderDefault);
-    console.log("se despacha action", filterApply, order)
+   
   };
 
   return (

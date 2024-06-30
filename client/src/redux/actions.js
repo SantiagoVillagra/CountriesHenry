@@ -13,10 +13,12 @@ export const getCountries = () => {
 
 export const searchCountries = (name) =>{
     return function(dispatch){
-        axios.get(`http://localhost:3001/countries/?=name${name}`)
+        axios.get(`http://localhost:3001/countries?name=${name}`)
         .then(({data}) => dispatch({type:SEARCH_COUNTRIES, payload: data}))
+        console.log("esto recibe el:",name)
     }
 }
+
 
 export const countriesActivity = () =>{
     return function (dispatch){
