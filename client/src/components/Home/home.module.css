@@ -1,17 +1,44 @@
-.body {
-    background-color: #cdf4f6;
-    width: 100%;
-    cursor: auto;
-    height: 100vh; 
-    margin: 0;
+.homeBackground {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  
+}
+.botonYSelect {
+  background-color:  #5898bb;
+  color:white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.searchBar{
+.topBar {
   display: flex;
-  justify-content: flex-end; /* Alinea los elementos al final del contenedor flex */
-  align-items: center; /* Centra verticalmente los elementos */
-  padding: 10px; /* Espacio alrededor del contenido */
-  background-color: #f0f0f0; /* Color de fondo opcional */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.filterSection, .orderSection {
+  display: flex;
+  align-items: center;
+}
+
+select, button {
+  margin: 0 10px;
+  padding: 5px;
 }
 
 .Cards {

@@ -1,21 +1,24 @@
 .Form {
-    height: calc(100vh - 107px);
+    background-image: url("../../assets/fondoForm.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../../assets/fondoWorld.jpg");
-    background-size: 250px;
-    background-repeat:repeat;
-    background-position-x: center;
 }
 
 .Form input {
     width: 100%;
+    height: 10%;
 }
 
 .Form span {
-    color: #f00;
+    color: rgb(253, 9, 9);
     max-width: inherit;
+    font-size:small;
 }
 
 .Form div {
@@ -27,14 +30,20 @@
     display: flex;
     flex-direction: column;
     border: 3px solid black;
-    background-color: #70C7DBcc;
+    background-color: #5fbdd29a;
+    font-family: fantasy;
+    font: size 20px;;
+    border-radius: 10px;
+    
 }
 
 .Form button {
-    padding: 5px;
-    background-color: #0065A2;
-    border: 2px solid #70C7DB;
-    color: #70C7DB;
+    background-color:  #5898bb;
+    color:white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
 }   
 
 .radios {

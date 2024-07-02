@@ -32,7 +32,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
             );
           }
           if (filterBy === "Tipo") {
-            console.log("entre al tipo")
+           
             
 
             filteredCountries = copyState.filter((country) => {
@@ -55,8 +55,7 @@ const rootReducer = (state = initialState, { type, payload }) => {
             } else {
                 copyState2 = [...state.allCountries];
             }
-            console.log(copyState2)
-            // el metodo sort compara caso asc o desc, y el metodo localCompare compara dos strings alfabeticamente
+          // el metodo sort compara caso asc o desc, y el metodo localCompare compara dos strings alfabeticamente
             if (orderBy === "Alfabetico") {
                 ordered = copyState2.sort((a, b) => {
                     if (order === "Desc") {
@@ -66,16 +65,15 @@ const rootReducer = (state = initialState, { type, payload }) => {
                     }
                 });
             }
-
             if (orderBy === "Poblacion") {
                 ordered = copyState2.sort((a, b) => {
-                    if (order === "Desc") {
-                        return a.population - b.population;
-                    } else {
-                        return b.population - a.population;
-                    }
+                  if (order === "Asc") {
+                    return a.population - b.population; // Orden ascendente por población
+                  } else {
+                    return b.population - a.population; // Orden descendente por población
+                  }
                 });
-            }
+              }
             return{...state, orderAndFilter: ordered}
 
         }else if (filteredCountries.length){

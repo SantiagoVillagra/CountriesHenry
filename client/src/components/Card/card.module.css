@@ -1,0 +1,25 @@
+.cardInd {
+    width: 300px; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center;
+    margin: 20px auto; 
+}
+
+
+
+.cardInd img {
+    width: 250px;
+    border-radius: 10px; 
+}
+
+.cardInd p {
+    text-decoration: none;
+    color: black;
+    margin: 0 10px;
+    font-family:fantasy;
+    font-size: 20px;
+    margin-bottom: 10px; /* Espacio entre párrafos */
+}

@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
-import validations from "./validations"
 import axios from "axios"
 import styles from "./form.module.css"
+import validations from "./validations"
 
 export default function Form() {
 
@@ -24,14 +24,16 @@ export default function Form() {
 
     const [errors, setErrors] = useState({})
 
-    const countriesOrdenados = [...allCountries].sort((a, b) => {
+    const orderedCountries = [...allCountries].sort((a, b) => {
         return a.name.localeCompare(b.name)
     })
 
     const handleChange = (event) => {
         setForm({...form, [event.target.name]: event.target.value})
 
-        validations(event.target.name, errors, setErrors, {...form, [event.target.name]: event.target.value})
+        validations(event.target.name, value, errors, setErrors, {...form, [event.target.name]: event.target.value})+
+     
+        consolelog(errors)
     }
 
     const handleCountries = (event, index) => {
@@ -45,7 +47,7 @@ export default function Form() {
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        const errores = Object.values(errors).filter(error => error.length)// es un metodo que devuelve las propiedades de un objeto, se hace filtrado para ver si hay error
+        const errores = Object.values(errors).filter(error => error.length)// metodo que devuelve las propiedades de un objeto, se hace filtrado para ver si hay error
 
         if (errores.length) {
             window.alert("Revisa que todos los campos hayan sido completados correctamente.")
@@ -59,7 +61,7 @@ export default function Form() {
 
         console.log(body);
         axios.post("http://localhost:3001/activities/", body)
-        .then(response => window.alert("info enviada"))
+        .then(response => window.alert("Actividad creada"))
         setForm(formDefault)
         setSelectCountries(selectCountriesDefault)
     }
@@ -123,7 +125,7 @@ export default function Form() {
                         type="range"
                         name="duration"
                         min={1}
-                        max={24}
+                        max={160}
                         value={form.duration}
                         onChange={handleChange}
                     />
@@ -200,7 +202,7 @@ export default function Form() {
     <label htmlFor="country">Selecciona un país: </label>
     <select name="country" id="country" value={form.country} onChange={handleChange}>
         <option value="Selecciona un país--">Selecciona un país--</option>
-        {countriesOrdenados?.map((country, index) => (
+        {orderedCountries?.map((country, index) => (
             <option key={country.id} value={country.id}>{country.name}</option>
         ))}
     </select>
@@ -215,7 +217,7 @@ export default function Form() {
                                 <label htmlFor={index}>Selecciona un country: </label>
                                 <select name={index} id={index} value={selectCountries[index].country} onChange={(event) => handleCountries(event, index)}>
                                     <option value="">Selecciona un country--</option>
-                                    {countriesOrdenados.map((country, index) => {
+                                    {orderedCountries.map((country, index) => {
                                         return (
                                             <option value={`${country.id}`}>{`${country.name}`}</option>
                                         )
