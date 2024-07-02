@@ -16,7 +16,7 @@ const postActivitiesControl = async (info) => {
     const { name, difficulty, duration, season, id } = info
     console.log(id)
     const newActivity = await Activity.create({ name, difficulty, duration, season})
-
+console.log("llego al post")
 
     // const mapeoId = id.map( async(id) => {
     //     await newActivity.setCountries(id)
